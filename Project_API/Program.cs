@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Project_API;
 using Project_API.Datos;
+using Project_API.Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 builder.Services.AddAutoMapper(typeof(MappingConfig));
+
+builder.Services.AddScoped<IVillaRepositorio, VillaRespositorio>();
+builder.Services.AddScoped<INumeroVillaRepositorio, NumeroVillaRespositorio>();
 
 var app = builder.Build();
 
