@@ -2,8 +2,9 @@
 
 namespace Project_API.Models.Dto
 {
-	public class VillaDto
+	public class VillaUpdateDto
 	{
+		[Required]
 		public int Id { get; set; }
 
 		[Required]
@@ -12,8 +13,11 @@ namespace Project_API.Models.Dto
 		public string Detail { get; set; }
 		[Required]
 		public double Tarifa { get; set; }
+		[Required]
 		public int Occupants { get; set; }
+		[Required]
 		public int Dimension { get; set; }
+		[Required]
 		public string ImagenUrl { get; set; }
 		public string Amenidad { get; set; }
 	}
